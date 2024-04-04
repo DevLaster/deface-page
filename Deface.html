@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Fucked Up</title>
+    <link rel="icon" type="image/png" href="https://nathanprinsley-files.prinsh.com/data-1/images/NathanPrinsley-AnonymousLogo-compressed.jpg"/> 
+    <style>
+        * {cursor: not-allowed}
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .centered-text {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            color: green;
+        }  
+    .greetz-container {
+        text-align: center;
+        margin-top: 500px;
+        color: #ffffff;
+        font-family: courier new;
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .marquee {
+        display: inline-block;
+        animation: marquee-left 10s linear infinite;
+    }
+    .marquee.reverse {
+        animation: marquee-right 10s linear infinite;
+}
+    @keyframes marquee-left {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes marquee-right {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+    <video src="./defac.mp4" autoplay loop></video>
+    <div class="centered-text">
+       <pre id="preTag">Your Website Hacked</pre>
+       
+    </div>
+
+    <div class="greetz-container">
+        <p class="style14" align="center"> <font color="#ffffff" face="courier new" size="3">Greetz :</font></p>
+        <div class="marquee">
+            <div class="marquee-text">Dear Admin Whatsupp? Come on Dont Be Worry Lets dance</div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var rev = "fwd";
+        var preText = "Your Website Hacked";
+        function titlebar(val)
+        {
+            var msg = "Powerd By Laster";
+            var res = " ";
+            var speed = 50;
+            var pos = val;
+            
+            msg = " " +msg+" ";
+            var le = msg.length;
+            if(rev == "fwd"){
+                if(pos < le){
+                    pos = pos+1;
+                    scroll = msg.substr(0,pos);
+                    document.title = scroll;
+                    timer = window.setTimeout("titlebar("+pos+")",speed);
+                }
+                else{
+                    rev = "bwd";
+                    timer = window.setTimeout("titlebar("+pos+")",speed);
+                }
+            }
+            else{
+                if(pos > 0){
+                    pos = pos-1;
+                    var ale = le-pos;
+                    scrol = msg.substr(ale,le);
+                    document.title = scrol;
+                    timer = window.setTimeout("titlebar("+pos+")",speed);
+                }
+                else{
+                    rev = "fwd";
+                    timer = window.setTimeout("titlebar("+pos+")",speed);
+                } 
+            }
+        }
+        
+        titlebar(0);
+        function changePreText() {
+            if (preText === "Your Website Hacked") {
+                preText = "wtf? ADMIN COME DANCE YO YO";
+            } else {
+                preText = "Your Website Hacked";
+            }
+            document.getElementById("preTag").textContent = preText;
+        }
+        setInterval(changePreText, 3000); 
+     </script>
+</body>
+</html>
